@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>ArtLokTask</title>
+  <title>ArtLok Tracker</title>
   <link rel="stylesheet" href="style.css">
   <!-- Firebase SDK -->
   <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js"></script>
@@ -13,18 +13,32 @@
 
   <nav>
     <button onclick="signIn()">Войти через Google</button>
-    <button onclick="signOut()">Выйти</button>
+    <button onclick="signOutUser()">Выйти</button>
   </nav>
 
-  <div id="userArea" style="display: none;">
+  <div id="userArea" style="display:none">
     <h2>Привет, <span id="userName"></span>!</h2>
 
-    <input type="text" id="taskInput" placeholder="Новая задача" />
-    <button onclick="addTask()">Добавить</button>
+    <div class="task-form">
+      <input type="text" id="taskInput" placeholder="Новая задача">
+      <select id="taskCategory">
+        <option value="Работа">Работа</option>
+        <option value="Дом">Дом</option>
+        <option value="Саморазвитие">Саморазвитие</option>
+      </select>
+      <button onclick="addTask()">Добавить</button>
+    </div>
+
+    <input type="text" id="searchTaskInput" placeholder="Поиск задач" oninput="renderTasks()">
 
     <ul id="taskList"></ul>
+
+    <div class="completed-section">
+      <button class="toggle-btn" onclick="toggleCompletedTasks()">Показать выполненные</button>
+      <ul id="completedTaskList" class="collapsed"></ul>
+    </div>
   </div>
 
-  <script src="script.js" type="module"></script>
+  <script type="module" src="script.js"></script>
 </body>
 </html>
