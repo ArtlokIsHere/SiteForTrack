@@ -1,55 +1,30 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <title>Мой сайт: Задачи, Заметки, Затраты</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>ArtLokTask</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js"></script>
 </head>
 <body>
 
   <nav>
-    <button onclick="showSection('tasks')">Задачи</button>
-    <button onclick="showSection('notes')">Заметки</button>
-    <button onclick="showSection('expenses')">Затраты</button>
+    <button onclick="signIn()">Войти через Google</button>
+    <button onclick="signOut()">Выйти</button>
   </nav>
 
-  <!-- Страница "Задачи" -->
-  <section id="tasks" class="section">
-    <h1>Мои задачи</h1>
+  <div id="userArea" style="display: none;">
+    <h2>Привет, <span id="userName"></span>!</h2>
+
     <input type="text" id="taskInput" placeholder="Новая задача" />
-    <select id="taskCategory">
-      <option value="Работа">Работа</option>
-      <option value="Дом">Дом</option>
-      <option value="Саморазвитие">Саморазвитие</option>
-    </select>
     <button onclick="addTask()">Добавить</button>
-    <br /><br />
-    <input type="text" id="searchTaskInput" placeholder="Поиск задач" oninput="renderTasks()" />
+
     <ul id="taskList"></ul>
+  </div>
 
-    <div class="completed-section">
-      <button class="toggle-btn" onclick="toggleCompletedTasks()">Показать выполненные</button>
-      <ul id="completedTaskList" class="collapsed"></ul>
-    </div>
-  </section>
-
-  <!-- Страница "Заметки" -->
-  <section id="notes" class="section" style="display: none;">
-    <h1>Мои заметки</h1>
-    <textarea id="noteInput" rows="4" placeholder="Новая заметка..."></textarea>
-    <br />
-    <button onclick="addNote()">Добавить</button>
-    <br /><br />
-    <input type="text" id="searchNoteInput" placeholder="Поиск заметок" oninput="renderNotes()" />
-    <ul id="noteList"></ul>
-  </section>
-
-  <!-- Страница "Затраты" -->
-  <section id="expenses" class="section" style="display: none;">
-    <h1>Раздел "Затраты"</h1>
-    <p>Пока пусто. Здесь можно будет учитывать расходы.</p>
-  </section>
-
-  <script src="script.js"></script>
+  <script src="script.js" type="module"></script>
 </body>
 </html>

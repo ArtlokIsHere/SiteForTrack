@@ -1,104 +1,32 @@
 body {
   font-family: Arial, sans-serif;
-  padding: 0;
-  margin: 0;
-  background-color: #f9f9f9;
-  max-width: 100%;
-}
-
-/* Верхнее меню */
-nav {
-  display: flex;
-  height: 2cm;
-  width: 100%;
-  background-color: #007bff;
-  border-bottom: 2px solid #0056b3;
-}
-
-nav button {
-  flex: 1;
-  height: 100%;
-  border: none;
-  background-color: #007bff;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-nav button:hover {
-  background-color: #0056b3;
-}
-
-.section {
   padding: 20px;
-  max-width: 600px;
-  margin: auto;
 }
 
-input[type="text"],
-textarea {
-  padding: 8px;
-  width: 70%;
-  margin: 5px 0;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 14px;
+nav {
+  margin-bottom: 20px;
 }
 
 button {
-  padding: 6px 10px;
+  padding: 8px 12px;
+  margin: 5px;
   font-size: 14px;
-  margin-left: 5px;
-  border-radius: 6px;
   cursor: pointer;
-  border: none;
-  background-color: #28a745;
-  color: white;
 }
 
-button:hover {
-  background-color: #1e7e34;
+input {
+  padding: 6px;
+  width: 60%;
 }
 
 ul {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
 }
 
 li {
-  display: flex;
-  align-items: center;
   margin-top: 10px;
+  background: #f0f0f0;
   padding: 10px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-
-li span {
-  margin-right: 10px;
-}
-
-.check-icon {
-  cursor: pointer;
-  font-size: 20px;
-  margin-right: 10px;
-}
-
-/* Выполненные задачи */
-.completed-section {
-  margin-top: 20px;
-}
-
-.toggle-btn {
-  margin-bottom: 10px;
-  background-color: #6c757d;
-}
-
-.toggle-btn:hover {
-  background-color: #5a6268;
-}
-
-.collapsed {
-  display: none;
+  border-radius: 6px;
 }
